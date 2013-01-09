@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * Implements hook_theme_registry_alter()
+**/
+function pnw_print_friendly_theme_registry_alter(&$theme_registry) {
+  $mod_path = drupal_get_path('module', 'pnw_print_friendly');
+  $theme_registry_copy = $theme_registry;
+  _theme_process_registry($theme_registry_copy, 'phptemplate', 'theme_engine', 'pow', $mod_path);
+  $theme_registry += array_diff_key($theme_registry_copy, $theme_registry);
+  $hooks = array('node');
+  foreach ($hooks as $h) {
+    _pnw_print_friendly_insert_after_first_element($theme_registry[$h]['theme paths'], $mod_path);
+  }
+}
+
+/**
+ * Helper function for re-ordering arrays (needed by theme_registry_alter)
+*/
+function _pnw_print_friendly_insert_after_first_element(&$a, $element) {
+  if(is_array($a)) {
+    $first_element = array_shift($a);
+    array_unshift($a, $first_element, $element);
+  }
+}
+
+
+/**
+ * Implements hook_node_view()
+**/
+function pnw_print_friendly_node_view($node, $view_mode, $langcode) {
+  if (arg(2) !== 'print') {
+    $node->content['links']['pnw_print_friendly_links'] = array(
+      '#theme' => 'links_node_pnw_print_friendly',
+      '#links' => array(
+        'print_friendly' => array(
+          'title' => t('Print-friendly version'),
+          'href' => 'node/' . $node->nid . '/print',
+          'attributes' => array(
+            'title' => t('Show a printer-friendly version of this page'),
+          ),
+        ),
+      ),
+      '#attributes' => array(
+        'class' => array(
+          'links',
+          'inline',
+        ),
+      ),
+    );
+  }
+
+  if (isset($node->content['links']['book']['#links']['book_printer']) && $node->book['depth'] = '1' && $node->book['has_children']) {
+    $node->content['links']['book']['#links']['book_printer']['title'] = 'Print entire book';
+  }
+  else {
+    unset($node->content['links']['book']['#links']['book_printer']);
+  }
+}
+
+
+/**
+ * Implements hook_theme()
+**/
+function pnw_print_friendly_theme() {
+  return array(
+    'book_navigation' => array(
+      'arguments' => array('book_link' => NULL),
+      'template' => 'theme/book-navigation',
+    ),
+    'book_export_html' => array(
+      'arguments' => array('title' => NULL, 'contents' => NULL, 'depth' => NULL),
+      'template' => 'theme/book-export-html',
+    ),
+  );
+}
