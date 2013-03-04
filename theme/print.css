@@ -16,12 +16,14 @@ html {
 /* underline all links */
 a:link, a:visited {
 	text-decoration: underline !important;
+	color: #000;
 }
 
 /* Don't underline header */
 #site-name a:link,
 #site-name a:visited {
 	text-decoration: none !important;
+	color: #000;
 }
 
 /* CSS2 selector to add visible href after links*/
