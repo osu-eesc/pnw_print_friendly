@@ -33,6 +33,7 @@
 <body class="print-friendly-body">
 
   <div id="limiter"> <!-- adds shadow around page -->
+
     <form id="send-to-printer">
       <input type="button" value="Print" onClick="window.print()" />
       <input type="button" value="Back" onClick="history.go(-1)" />
