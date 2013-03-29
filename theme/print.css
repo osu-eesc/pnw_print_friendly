@@ -74,7 +74,6 @@ article {
 	}
 	
 	#send-to-printer input {
-		-moz-outline-radius: 4px 4px 4px 4px;
     background-color: transparent;
     background-position: 0 0;
     background-repeat: no-repeat;
@@ -86,7 +85,6 @@ article {
     font-size: 0.75em;
     font-weight: 700;
     margin: 3px 10px 3px 0;
-    outline: 1px solid #9BABB0;
     padding: 2px 6px;
 	}
 }
@@ -147,6 +145,7 @@ hr.bottom-bar {
 
 #send-to-printer {
 	float: right;
+	padding-left: 15px;
 }
 
 .date-display-start, 
