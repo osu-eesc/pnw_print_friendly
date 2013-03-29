@@ -167,11 +167,16 @@ hr.bottom-bar {
 	}
 
 .view-related-images {
-    background-color: #Ffff;
-    border: 1px solid #C8C8C8;
     float: right;
-    padding: 5px;
-    width: 210px;
+    padding: 0 0 0 5px;
+    width: 222px;
+}
+
+.view-related-images .views-row {
+	background-color: #FFF;
+  border: 1px solid #C8C8C8;
+	padding: 5px;
+	margin: 0 0 10px 0;
 }
 
 .views-field-field-image-description {
