@@ -819,3 +819,8 @@ fieldset#node_page_full_group_author_date  {
 	padding: 0;
 	margin-bottom: 10px;
 }
+
+.field-name-field-styled-title {
+	font-size: 1.25em;
+	font-weight: bold;
+}
