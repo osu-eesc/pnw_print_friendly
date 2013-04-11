@@ -29,13 +29,13 @@ function _pnw_print_friendly_insert_after_first_element(&$a, $element) {
  * Implements hook_node_view()
 **/
 function pnw_print_friendly_node_view($node, $view_mode, $langcode) {
-	$disabled_types = array(
-		'homepagephoto',
-		'pdf_section',
-		'relatedlink',
-		'image',
-		'socialmedialink'		
-	);
+  $disabled_types = array(
+    'homepagephoto',
+    'pdf_section',
+    'relatedlink',
+    'image',
+    'socialmedialink'		
+  );
   if (arg(2) !== 'print' && !in_array($node->type, $disabled_types)) {
     $node->content['links']['pnw_print_friendly_links'] = array(
       '#theme' => 'links_node_pnw_print_friendly',
