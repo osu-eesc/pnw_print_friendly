@@ -824,3 +824,31 @@ fieldset#node_page_full_group_author_date  {
 	font-size: 1.25em;
 	font-weight: bold;
 }
+
+/* make views tables look good */
+div.view-related-content table.views-table tbody tr td {
+	width: auto;
+}
+
+div.view-related-content table.views-table tbody tr td {
+	font-size: 0.875em;
+}
+
+div.view-id-section_contents table {
+	width: 75%;
+}
+
+div.view-id-section_contents div.view-header {
+	margin-top: 1em;
+	font-size: 1.125em;
+	font-weight: bold;
+}
+
+div.view-id-section_contents table.views-table tbody, thead, tfoot, tr, td, th {
+	border: 1px solid #D5D5D5;
+	padding: 0.5em 1.0em;
+}
+
+div.view-id-section_contents table.views-table tbody tr td {
+	font-size: 0.875em;
+}
