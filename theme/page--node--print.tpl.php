@@ -23,7 +23,17 @@
             <?php if ($page['content']): ?>
 
               <div id="content-content" class="content-content">
+
+                <?php
+                  $block = module_invoke('views', 'block_view', 'de9dbf4a70df215c4657b4bc8c01f159');
+                  if ($block) {
+                    print render($block);
+                  }
+                ?>
+
                 <?php print render($page['content']); ?>
+
+
                 
                 <?php
                   $block = module_invoke('views', 'block_view', 'ae7496d40d3739342fa2c6df343877c4');
