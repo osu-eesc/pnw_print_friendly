@@ -48,7 +48,7 @@ article {
 
 /* Hide sidebars and nav elements */
 #header-top-wrapper, #header-group, #rss-feed-icon, 
-#logo, #sidebar-first, #sidebar-last, #footer-wrapper, 
+#logo, #sidebar-first, /*#sidebar-last,*/ #footer-wrapper, 
 #footer-message-wrapper, #content-tabs, #breadcrumbs, 
 #comments, #admin-menu, .fusion-edit, div.tabs, .links, 
 .taxonomy,.book-navigation, .forum-topic-navigation, 
