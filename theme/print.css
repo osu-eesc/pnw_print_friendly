@@ -165,6 +165,11 @@ hr.bottom-bar {
 	font-weight: normal;
 	}
 
+div.view-display-id-sidebar_related_images {
+	margin-top: 40px;
+	margin-left: 10px;
+}
+
 .view-related-images {
     float: right;
     padding: 0 0 0 5px;
